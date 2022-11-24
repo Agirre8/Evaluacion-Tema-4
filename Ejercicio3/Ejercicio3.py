@@ -92,3 +92,13 @@ m4 = nodoVertice(maravillas[3])
 m5 = nodoVertice(maravillas[4])
 m6 = nodoVertice(maravillas[5])
 m7= nodoVertice(maravillas[6])
+
+grafo = Grafo()
+grafo.insertar(m1)
+grafo.insertar(m2)
+grafo.insertar(m3)
+grafo.insertar(m4)
+grafo.insertar(m5)
+grafo.insertar(m6)
+grafo.insertar(m7)
+
