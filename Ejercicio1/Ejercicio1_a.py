@@ -72,6 +72,7 @@ def codificarMensaje(texto):
     return mensajeCodificado
 codificarMensaje(mensaje)
 
+
 """
 El resultado obtenido es: 
 A -->00
