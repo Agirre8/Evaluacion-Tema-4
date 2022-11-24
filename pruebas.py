@@ -35,4 +35,28 @@ def printNodo(nodo, val=""):
 
 simbolo = ["A", "F", "1", "3", "0", "M", "T"]
 
-freq = []
+freq = [0.2, 0.17, 0.13, 0.21, 0.05, 0.09, 0.15]
+
+nodos = []
+
+#metodo para transformar simbolos  frecuencias en nodos de huffman
+
+for x in range(len(simbolo)):
+    heapq.heappush(nodos, nodo(freq[x], simbolo[x]))
+
+#ordenar los nodos en orden ascendente, basandonos en su frecuencia
+while len(nodos) > 1:
+     
+    left = heapq.heappop(nodos)
+    right = heapq.heappop(nodos)
+ 
+    # asignamos valor 0 y 1 a la direccion de los nodos, al izquierdo siempre se le asigna el 0 y al derecho el 1
+    left.huff = 0
+    right.huff = 1
+ 
+    #combinar los dos nodos mas pequeños para crear un nodo parental como conbinacion de los 2
+    newNode = nodo(left.freq+right.freq, left.symbol+right.symbol, left, right)
+ 
+    heapq.heappush(nodos, newNode)
+ 
+printNodo(nodos[0])
