@@ -82,7 +82,7 @@ maravillas=[{'Nombre': 'Gran Muralla China', 'Pais': 'China', 'Tipo': 'ARQUITECT
 
 dist = [['Gran Muralla China', 'Coliseo de Roma', 7565], ['Coliseo de Roma','Machu Picchu', 10478], ['Gran Muralla China', 'Ciudad de Petra', 6217], 
         ['Gran Muralla China', 'Machu Picchu', 17038], ['Gran Muralla China', 'Taj Mahal', 7510], ['Ciudad de Petra','Taj Mahal', 4396], 
-        ['Coliseo de Roma','Ciudad de Petra', 3673], ['Bahía de Ha Long', 'Isla Jeju', 2362 ],['Machu Picchu', 'Taj Mahal', 16941] 
+        ['Coliseo de Roma','Ciudad de Petra', 3673], ['Bahía de Ha Long', 'Isla Jeju', 2362 ],['Machu Picchu', 'Taj Mahal', 16941], 
         ['Coliseo de Roma','Taj Mahal', 6571], ['Ciudad de Petra', 'Machu Picchu',  12547], ]
 
 m1 = nodoVertice(maravillas[0])
