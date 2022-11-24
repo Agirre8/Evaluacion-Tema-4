@@ -51,3 +51,36 @@ def visitado(grafo):
     while vertice is not None:
         vertice.visitado = False
         vertice = vertice.sig
+
+def distancia(v1, v2, lista):
+    for i in range(len(lista)):
+        if v1.info['Nombre'] in lista[i] and v2.info['Nombre'] in lista[i]:
+            v1.insertar_adyacente(v2, distancia[i][2])
+
+def ajustarvertice(vertice, vertice2, dist):
+    if vertice2 is not None:
+        if not isinstance(vertice2.info, dict):
+            vertice2 = vertice2.info
+        if vertice.info['Tipo'] == vertice2.info['Tipo']:
+            distancia(vertice, vertice2, dist)
+        ajustarvertice(vertice, vertice2.sig, dist)
+
+def colocar_adyacencia(vertice, maravillas, dist, n):
+    if vertice is not None:
+        vertice2 = vertice.sig
+        if not vertice.visitado:
+            vertice.visitado = True
+            ajustarvertice(vertice, vertice2, dist)
+            if n < 6:
+                n = n + 1
+                colocar_adyacencia(maravillas[n], maravillas, dist, n)
+                   
+maravillas=[{'Nombre': 'Gran Muralla China', 'Pais': 'China', 'Tipo': 'ARQUITECTURA'}, {'Nombre': 'Coliseo de Roma' , 'Pais': 'Italia' , 'Tipo': 'ARQUITECTURA'}, 
+            {'Nombre': 'Ciudad de Petra', 'Pais': 'Jordania ' , 'Tipo': 'ARQUITECTURA'}, {'Nombre': 'Bahía de Ha Long', 'Pais': 'Vietnam' , 'Tipo': 'NATURAL'}, 
+            {'Nombre': 'Isla Jeju', 'Pais': 'Corea Sur' , 'Tipo': 'NATURAL'}, {'Nombre': 'Machu Picchu', 'Pais': 'Peru' , 'Tipo': 'ARQUITECTURA'}, 
+            {'Nombre': 'Taj Mahal', 'Pais': 'India', 'Tipo':'ARQUITECTURA'}]
+
+dist = [['Gran Muralla China', 'Coliseo de Roma', 7565], ['Coliseo de Roma','Machu Picchu', 10478], ['Gran Muralla China', 'Ciudad de Petra', 6217], 
+        ['Gran Muralla China', 'Machu Picchu', 17038], ['Gran Muralla China', 'Taj Mahal', 7510], ['Ciudad de Petra','Taj Mahal', 4396], 
+        ['Coliseo de Roma','Ciudad de Petra', 3673], ['Bahía de Ha Long', 'Isla Jeju', 2362 ],['Machu Picchu', 'Taj Mahal', 16941] 
+        ['Coliseo de Roma','Taj Mahal', 6571], ['Ciudad de Petra', 'Machu Picchu',  12547], ]
