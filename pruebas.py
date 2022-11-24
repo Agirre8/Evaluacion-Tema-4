@@ -9,9 +9,10 @@ class nodo:
     def __init__(self, freq, simbolo, left=None, right=None):
         
         self.freq = freq
-        self.symbol = simbolo
+        self.simbolo = simbolo
         self.left = left
         self.right = right
+        self.huff = ""
     
     def __lt__(self, nxt): #metodo less than, es para comprobar numeros menores que.
         return self.freq < nxt.freq
@@ -55,7 +56,7 @@ while len(nodos) > 1:
     right.huff = 1
  
     #combinar los dos nodos mas pequeños para crear un nodo parental como conbinacion de los 2
-    newNode = nodo(left.freq+right.freq, left.symbol+right.symbol, left, right)
+    newNode = nodo(left.freq+right.freq, left.simbolo+right.simbolo, left, right)
  
     heapq.heappush(nodos, newNode)
  
