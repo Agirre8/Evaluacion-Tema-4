@@ -102,3 +102,11 @@ grafo.insertar(m5)
 grafo.insertar(m6)
 grafo.insertar(m7)
 
+
+grafo.mostrar()
+visitado(grafo)
+maravillas = [m1, m2, m3, m4, m5, m6, m7]
+vertice = grafo.inicio
+n = 0
+
+colocar_adyacencia(vertice, maravillas, dist, n)
