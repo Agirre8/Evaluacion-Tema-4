@@ -45,3 +45,9 @@ class Grafo(object):
                 vertice.visitado= True
                 print(vertice.info)
                 vertice = vertice.sig 
+
+def visitado(grafo):
+    vertice = grafo.inicio
+    while vertice is not None:
+        vertice.visitado = False
+        vertice = vertice.sig
