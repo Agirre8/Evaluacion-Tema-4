@@ -52,3 +52,15 @@ class Arbol:
         print("Imprimiendo árbol inorden: ")
         self.__inorden_recursivo(self.raiz)
         print("")
+    def preorden(self):
+        print("Imprimiendo árbol preorden: ")
+        self.__preorden_recursivo(self.raiz)
+        print("")
+
+    def postorden(self):
+        print("Imprimiendo árbol postorden: ")
+        self.__postorden_recursivo(self.raiz)
+        print("")
+
+    def buscar(self, busqueda):
+        return self.__buscar(self.raiz, busqueda)
