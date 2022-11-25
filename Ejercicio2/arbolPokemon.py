@@ -23,3 +23,13 @@ class Arbol:
             self.__inorden_recursivo(nodo.izquierda)
             print(nodo.dato, end=", ")
             self.__inorden_recursivo(nodo.derecha)
+    def __preorden_recursivo(self, nodo):
+        if nodo is not None:
+            print(nodo.dato, end=", ")
+            self.__preorden_recursivo(nodo.izquierda)
+            self.__preorden_recursivo(nodo.derecha)
+    def __postorden_recursivo(self, nodo):
+        if nodo is not None:
+            self.__postorden_recursivo(nodo.izquierda)
+            self.__postorden_recursivo(nodo.derecha)
+            print(nodo.dato, end=", ")
