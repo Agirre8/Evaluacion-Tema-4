@@ -7,7 +7,7 @@ class Arbol:
     # Funciones privadas
     def __init__(self, dato):
         self.raiz = Nodo(dato)
-def __agregar_recursivo(self, nodo, dato):
+    def __agregar_recursivo(self, nodo, dato):
         if dato < nodo.dato:
             if nodo.izquierda is None:
                 nodo.izquierda = Nodo(dato)
@@ -18,3 +18,8 @@ def __agregar_recursivo(self, nodo, dato):
                 nodo.derecha = Nodo(dato)
             else:
                 self.__agregar_recursivo(nodo.derecha, dato)
+    def __inorden_recursivo(self, nodo):
+        if nodo is not None:
+            self.__inorden_recursivo(nodo.izquierda)
+            print(nodo.dato, end=", ")
+            self.__inorden_recursivo(nodo.derecha)
