@@ -42,3 +42,13 @@ class Arbol:
             return self.__buscar(nodo.izquierda, busqueda)
         else:
             return self.__buscar(nodo.derecha, busqueda)
+
+ # Funciones públicas
+
+    def agregar(self, dato):
+        self.__agregar_recursivo(self.raiz, dato)
+
+    def inorden(self):
+        print("Imprimiendo árbol inorden: ")
+        self.__inorden_recursivo(self.raiz)
+        print("")
