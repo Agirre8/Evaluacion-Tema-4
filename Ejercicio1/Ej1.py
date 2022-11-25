@@ -63,14 +63,18 @@ while len(nodos) > 1:
 printNodo(nodos[0])
 simobolosCodificados={"A":"00", "1":"01", "3":"100", "0":"1010", "M":"1011", "T":"110", "F":"111"}
 
-mensaje= "AFFM03T11A"
 
 def codificarMensaje(texto):
     mensajeCodificado = " "
     for i in texto:
         mensajeCodificado += simobolosCodificados[i]
     return mensajeCodificado
-codificarMensaje(mensaje)
+
+def descodificarMensaje(texto):
+    mensaje = ""
+    for i in texto:
+        mensajeCodificado += simobolosCodificados[0]
+    return mensaje
 
 
 """
